@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b41ede1fbeac6894cb6104fbcd80cfa0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Avenir Next Rounded Pro
+  fontNames:
+  - Avenir Next Rounded Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5057f751fdf77fc41b96a80deb4de322, type: 3}
+  - {fileID: 12800000, guid: c30f123c555cb33439c014cbb7588456, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "634863373662",
+    "firebase_url": "https://xplorabox-ab98f.firebaseio.com",
+    "project_id": "xplorabox-ab98f",
+    "storage_bucket": "xplorabox-ab98f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634863373662:android:08f6dc8daab5dfd325d3cf",
+        "android_client_info": {
+          "package_name": "com.bts.xplorabox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634863373662-3kq6ogbev04qkio8dn4v4scn4mc1g7v0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvtNK0PoeaQEJHYpJ2PokFbWQLWkE6oa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634863373662-3kq6ogbev04qkio8dn4v4scn4mc1g7v0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

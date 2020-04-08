@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 6a1963692f4d2bc4db19743d2971f267
+  - enabled: 1
+    path: Assets/Scenes/ChildDetalis.unity
+    guid: e7a9caaa990b54548a52d46e93d17d11
+  - enabled: 1
+    path: Assets/Scenes/WorksheetHomePage.unity
+    guid: 7aff7b7019c7fde46b4253c1a42186b3
+  - enabled: 1
+    path: Assets/Scenes/WorksheetPlayScene.unity
+    guid: 521e209c4e5fb5e468d45daebebdfdb8
+  - enabled: 1
+    path: Assets/Scenes/PurchasingScene.unity
+    guid: dd4ce59e4d42d354ca290ce4f41170ac
+  - enabled: 1
+    path: Assets/Scenes/Drawing/DrawingWorksheetScene.unity
+    guid: 8975dd9c0c2723c42803ad3c3a4dda99
+  m_configObjects: {}
