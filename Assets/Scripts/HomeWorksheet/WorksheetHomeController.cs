@@ -131,10 +131,11 @@ public class WorksheetHomeController : MonoBehaviour
                         for (int l = 0; l < xplorasmartsheet.root[m].category.Length; l++)
                         {
                             string[] language_URL = xplorasmartsheet.root[m].category[l].ToString().Split('-');
+                           
                             #region[settingDefaultImageURL]     
-                            if (m == 0 && string.IsNullOrEmpty(PlayerPrefs.GetInt("_MainCategoryIndexId").ToString())
-)
+                            if (m == 0 &&PlayerPrefs.GetInt("_MainCategoryIndexId").Equals(0))                           
                             {
+                                print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxMain Category index has been set to zero");
                                 DefaultImageUrl = language_URL[1];
                                 PlayerPrefs.SetString("_MainCategoryIndexIdImageURL", DefaultImageUrl);
                                 PlayerPrefs.SetInt("_MainCategoryIndexId", 0);
@@ -192,7 +193,7 @@ public class WorksheetHomeController : MonoBehaviour
         PlayerPrefs.SetInt("_finalSelectedGrade", DropDownClassSelection.value - 1);
         Jsonfilename = PlayerPrefs.GetInt("_finalSelectedGrade") + ".xplorabox";
         print("You tried to access file name" + Jsonfilename);
-
+        PlayerPrefs.SetInt("_MainCategoryIndexId", 0);
         if (!File.Exists(Jsonfolderpath + Jsonfilename))
         {
             print(Jsonfilename + " file is not  here");
@@ -204,7 +205,6 @@ public class WorksheetHomeController : MonoBehaviour
         {
             print(Jsonfilename + " file is here");
             ApploaderController.ApploaderController_Instance.Activate_Apploader();
-            PlayerPrefs.SetInt("_MainCategoryIndexId", 0);
             SceneLoader.sceneLoader_Instance.SceneLoaderCallback("WorksheetHomePage");
         }
     }
@@ -265,8 +265,8 @@ public class WorksheetHomeController : MonoBehaviour
             {
                 if (xplorasmartsheet.root[mainCategoryIndex].category_data[subcategory].sub_category_data[j].type.ToString() == "paid")
                 {
-                    if (PlayerPrefs.GetString("_OrderValidity") == "EXPIRED")//free playerfabs
-                    {
+                    //if (PlayerPrefs.GetString("_OrderValidity") == "EXPIRED")//free playerfabs
+                    //{
                         print("userorder == EXPIRED");
                         myPaidWorksheetElement = Instantiate(PaidWorksheetElementPrefab);
                         if (samescene_call) { myPaidWorksheetElement.transform.SetParent(ScrollView_Container.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform, false); }
@@ -282,15 +282,15 @@ public class WorksheetHomeController : MonoBehaviour
                         myPaidWorksheetElement.name = "Worksheet " + j;
                         myPaidWorksheetElement.GetComponent<PaidWorksheetPrefab_Controller>().Paid_thumbnail = xplorasmartsheet.root[mainCategoryIndex].category_data[subcategory].sub_category_data[j].thumbnail;
                         myPaidWorksheetElement.GetComponent<PaidWorksheetPrefab_Controller>().Paid_worksheeturl = xplorasmartsheet.root[mainCategoryIndex].category_data[subcategory].sub_category_data[j].url;
-                    }
-                    else
-                    {
-                        if (PlayerPrefs.GetString("_OrderValidity") == "VALID")//free playerfabs
-                        {
-                            print("userorder == VALID");
-                            InstantiatFreeWorksheet(mainCategoryIndex, subcategory, j, true, ScrollView_Container, samescene_call, Current_selected_worksheet);
-                        }
-                    }
+                   // }
+                    //else
+                    //{
+                    //    if (PlayerPrefs.GetString("_OrderValidity") == "VALID")//free playerfabs
+                    //    {
+                    //        print("userorder == VALID");
+                    //        InstantiatFreeWorksheet(mainCategoryIndex, subcategory, j, true, ScrollView_Container, samescene_call, Current_selected_worksheet);
+                    //    }
+                    //}
                 }
             }
             #endregion

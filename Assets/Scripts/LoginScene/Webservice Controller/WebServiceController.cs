@@ -13,7 +13,8 @@ public class WebServiceController : MonoBehaviour
     #region Static Members
     [Header("Static Members")]
     public static WebServiceController webServiceController_Instance;
-    public static string BaseUrl = "https://app.xplorabox.com/";
+   
+    public static string BaseUrl= "https://sandbox.app.xplorabox.com/";
     public static string Grant_Type = "password";
     public static string Client_Id = "2";
     public static string Client_Secret = "tAtrZjRWprr8T6c7SE24mjGtAa8AYJiylOryF0Pj";
@@ -384,6 +385,7 @@ public class WebServiceController : MonoBehaviour
 
             if (!string.IsNullOrEmpty(jsonData["json"].ToString()))
             {
+                //var Json_url = jsonData["json"].ToString();
                 var uwr = new UnityWebRequest(jsonData["json"].ToString(), UnityWebRequest.kHttpVerbGET);
                 uwr.downloadHandler = new DownloadHandlerFile(Application.persistentDataPath + "/_MyStuff/Xplorabox/" + age_group_id + ".xplorabox");
                 yield return uwr.SendWebRequest();

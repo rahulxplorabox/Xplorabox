@@ -12,8 +12,8 @@ public class SceneLoader : MonoBehaviour
     public string LastVisitDate;
     public GameObject AppUpdatePanel;
     public float AppVersionCode;
-    bool ShowAppUpdatePanel;
-    static string Apiversion_URL = "https://app.xplorabox.com/api/get_app_version";
+    bool ShowAppUpdatePanel; 
+    static string Apiversion_URL = "https://sandbox.app.xplorabox.com/api/get_app_version";
     #endregion
 
     #region MONOBEHAVIOUR_METHODS
@@ -97,18 +97,19 @@ public class SceneLoader : MonoBehaviour
                     AppVersionCode = float.Parse(jsonData["version"].ToString());
                     if (float.Parse(Application.version) != AppVersionCode)
                     {
+                        print("Version Mismatched, Please update the app");
                         AppUpdatePanel.SetActive(true);
-
                     }
                     else
                     {
                         if ((bool)jsonData["maintenance_mode"])
                         {
-                            print("it's true");
+                            print("Emergency Called");
                             MaintenancePanel.MaintenancePanel_intance.ShowEmergencyPanel();
                         }
                         else
                         {
+                            print("Version matched now proceeding to Homescreen");
                             proceed_to_homescreen();
                         }
                     }
@@ -131,19 +132,18 @@ public class SceneLoader : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(WebServiceController.webServiceController_Instance.AccessToken))
         {
-            print("version Matched");
             if (PlayerPrefs.GetString("_finalChildNameDetails") != "")
             {
-                WebServiceController.webServiceController_Instance.GetOrderValidity();
                 print("Already Logged In");
+                WebServiceController.webServiceController_Instance.GetOrderValidity();
                 SceneLoaderCallback("WorksheetHomePage");
             }
             else
             {
-                print("Version Mismatched, Please update the app");
                 SceneLoaderCallback("LoginScene");
             }
         }
+        else { print("Access token is null"); }
     }
     #endregion
 }

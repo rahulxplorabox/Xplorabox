@@ -39,9 +39,11 @@ public class PaidWorksheetPrefab_Controller : MonoBehaviour
             {
                 try
                 {
-                    Texture myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+                    Texture2D myTexture = new Texture2D(32, 32, TextureFormat.Alpha8, false);
+                    myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
                     PaidWorksheetImage.texture = myTexture;
-                    byte[] bytes = ((Texture2D)myTexture).EncodeToPNG();
+
+                    byte[] bytes = myTexture.EncodeToJPG();
                     File.WriteAllBytes(cachefolder_path + Path.GetFileName(Paid_thumbnail).ToString().Split('.')[0], bytes);
                     print(Path.GetFileName(Paid_worksheeturl) + " Downloaded");
                 }

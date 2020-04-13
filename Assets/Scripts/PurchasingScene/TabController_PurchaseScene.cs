@@ -31,6 +31,14 @@ public class TabController_PurchaseScene : MonoBehaviour
         options.pageTitle = "Xplorabox";
         InAppBrowser.OpenURL(Pagetopen, options);
     }
+
+    public void backButtonController()
+    {
+        SoundController.soundsControllerInstance.PlayButtonsound();
+        print("Back button press");
+        ApploaderController.ApploaderController_Instance.Activate_Apploader();
+        SceneLoader.sceneLoader_Instance.SceneLoaderCallback("WorksheetHomePage");
+    }
    
 
 }

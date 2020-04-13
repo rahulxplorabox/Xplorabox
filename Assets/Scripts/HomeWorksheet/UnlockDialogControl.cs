@@ -25,6 +25,5 @@ public class UnlockDialogControl : MonoBehaviour
     public void CloseButtonClick()
     {
         UnlockDialog_Panel.SetActive(false);
-        
     }
 }

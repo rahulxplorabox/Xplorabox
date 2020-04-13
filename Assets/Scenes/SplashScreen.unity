@@ -1503,7 +1503,7 @@ MonoBehaviour:
   ChangeGradeIndex: 0
   ChangeGradeIndexValue: 
   LanguageDetalList: []
-  DeletePlayerData: 0
+  DeletePlayerData: 1
 --- !u!114 &1186469930
 MonoBehaviour:
   m_ObjectHideFlags: 0

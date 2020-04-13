@@ -58,9 +58,11 @@ public class FreeWorksheetElementPrefab_Controller : MonoBehaviour
                 {
                     try
                     {
-                        Texture myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+                        Texture2D myTexture = new Texture2D(32, 32, TextureFormat.Alpha8, false);
+                        myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
                         worksheetRawImage.texture = myTexture;
-                        byte[] bytes = ((Texture2D)myTexture).EncodeToPNG();
+                        byte[] bytes = myTexture.EncodeToJPG();
+
                         File.WriteAllBytes(cachefolder_path + Path.GetFileName(Thumbnail).ToString().Split('.')[0], bytes);
                         print(Path.GetFileName(Thumbnail) + " Downloaded");
                     }
